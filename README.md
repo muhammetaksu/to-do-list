@@ -1,4 +1,4 @@
-# Weather App
+# To Do List
 
 > [Kodluyoruz](https://www.kodluyoruz.org/) Javascript eğitimi kapsamında hazırlamış olduğum çalışma.
 
