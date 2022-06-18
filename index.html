@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>To Do List</title>
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/css/bootstrap.min.css"
+            integrity="sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="container">
+        <header class="text-center">
+            <div id="img">
+                <img
+                    class="bg-white"
+                    src="https://cdn.sanity.io/images/9kdepi1d/production/65c832d202a503b15d99e628f4313782f3ef50db-300x62.png"
+                    alt=""
+                />
+            </div>
+            <div>
+                <h2 style="text-shadow: 0 0 5px black" class="text-white my-2">
+                    TO DO LIST
+                </h2>
+            </div>
+            <div class="row mt-4">
+                <input
+                    class="w-75 border-0 py-2 px-4"
+                    type="text"
+                    id="taskInput"
+                    placeholder="What are you doing today?"
+                />
+                <button
+                    onclick="addNewTask()"
+                    class="w-25 text-center border-0"
+                    type="button"
+                    id="addButton"
+                    for="taskInput"
+                >
+                    Add
+                </button>
+                <br />
+                <button
+                    onclick="deleteItems()"
+                    class="w-25 offset-9 text-center border-0 mt-3"
+                    id="clearList"
+                >
+                    Clear list
+                </button>
+            </div>
+        </header>
+        <main id="main">
+            <div id="taskContainer">
+                <ul class="p-0" id="taskList"></ul>
+                <p class="bg-light shadow px-4 py-3 m-0" id="paragraph">
+                    To do list is empty.
+                </p>
+            </div>
+        </main>
+    </body>
+    <script src="script.js"></script>
+</html>

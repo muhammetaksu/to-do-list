@@ -1,0 +1,134 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif !important;
+    font-weight: 600 !important;
+}
+
+header {
+    background-color: #f78501;
+    padding: 20px 30px;
+}
+
+/********* butonların özellikleri **********/
+#addButton {
+    background: #d9d9d9;
+    padding: 10px;
+    width: 25%;
+    color: rgb(70, 70, 70);
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#addButton:hover {
+    background-color: #bbb;
+}
+
+#clearList {
+    background: #d9d9d9;
+    padding: 10px;
+    width: 25%;
+    color: rgb(70, 70, 70);
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+#clearList:hover {
+    background-color: #bbb;
+    border-radius: 5px;
+}
+
+.removeButton {
+    z-index: 1;
+    position: absolute;
+    padding: 3px;
+    border: 1px solid rgba(128, 128, 128, 0.418);
+    border-radius: 5px;
+    right: 15px;
+    text-align: center;
+    font-size: small;
+    color: white;
+    font-weight: 600;
+    background: rgba(255, 0, 0, 0.555);
+}
+
+.removeButton:hover {
+    background-color: rgba(255, 0, 0, 0.699);
+    border-radius: 5px;
+}
+
+/******** INPUT ********/
+#taskInput {
+    transition: 0.3s;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#taskInput:focus {
+    box-shadow: 0 0 0.15rem 0.2rem rgb(240, 240, 240);
+    outline: 0;
+    z-index: 1;
+}
+
+/**** li özellikleri ****/
+
+ul > li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 12px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    list-style-type: none;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+ul > li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+ul > li:hover {
+    background: #ddd;
+}
+
+.liFinished {
+    background: rgba(0, 153, 255, 0.445) !important;
+    border: 1px solid lightblue;
+    text-decoration: line-through;
+}
+.liFinished:hover {
+    background: rgba(0, 153, 255, 0.349) !important;
+}
+
+ul > li.checked {
+    background: #276678;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+ul > li.checked::before {
+    content: "";
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+/************/
