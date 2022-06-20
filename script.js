@@ -65,6 +65,7 @@ let listTasks = () => {
         document.querySelector("#taskList").append(li);
     });
 };
+
 ///////////////////////////////// taskList'e YENİ ELEMAN EKLEME
 const addNewTask = () => {
     if (taskInput.value != 0) {
@@ -74,6 +75,9 @@ const addNewTask = () => {
             name: `${taskInput.value}`,
         };
         myTasks.push(liDOM);
+        document.querySelector("#snackbar").innerHTML =
+            "You have added a to-do.";
+        snackbar();
     } else {
         alert("Bir şey yazmalısın.");
     }
@@ -89,6 +93,8 @@ let deleteItems = () => {
     myTasks.splice(0, myTasks.length);
     console.log(myTasks);
     listTasks();
+    document.querySelector("#snackbar").innerHTML = "You removed all to-do's.";
+    snackbar();
 };
 
 ///////////////////////// SEÇİLEN GÖREVİ SİLME
@@ -108,6 +114,8 @@ document.addEventListener("click", (e) => {
         console.log(myTasks);
 
         listTasks();
+        document.querySelector("#snackbar").innerHTML = "You removed a to-do.";
+        snackbar();
     }
 });
 /////////////////// li MAVİ YAPMA- (task tamamlandı)
@@ -115,5 +123,43 @@ document.addEventListener("click", (e) => {
     if (e.target.classList.contains("listItem")) {
         //complete task
         e.target.classList.toggle("liFinished");
+        document.querySelector("#snackbar").innerHTML =
+            "You re-added the to-do.";
+        snackbar();
+
+        if (e.target.classList.contains("liFinished")) {
+            document.querySelector("#snackbar").innerHTML =
+                "Congratulations. You've complete the job.";
+            snackbar();
+        }
     }
 });
+
+////////// TOAST
+
+function snackbar() {
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function () {
+        x.className = x.className.replace("show", "");
+    }, 3000);
+}
+
+// function toast(text) {
+//     <div
+//         class="toast align-items-center"
+//         role="alert"
+//         aria-live="assertive"
+//         aria-atomic="true"
+//     >
+//         <div class="d-flex">
+//             <div class="toast-body">{text}</div>
+//             <button
+//                 type="button"
+//                 class="btn-close me-2 m-auto"
+//                 data-bs-dismiss="toast"
+//                 aria-label="Close"
+//             ></button>
+//         </div>
+//     </div>;
+// }
